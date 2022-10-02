@@ -1,8 +1,10 @@
 import discord
 import csv
 
-intents = discord.Intents.default()
+#intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.members = True
+#intents.message_content = True
 client = discord.Client(intents=intents)
 guild = 0
 app_info = None
@@ -10,6 +12,7 @@ bot_owner_user = None
 bot_owner_name = ""
 users_in_channel = dict()       # Key: String - Value: String
 voice_channel_users = dict()    # Key: String - Value: MemberClass
+
 
 @client.event
 async def on_ready():
@@ -37,6 +40,7 @@ def fill_voice_channel_users():
                 users_in_channel[only_username] = voice_channel.name
 
 
+@client.event
 async def on_message(message):
     member = message.author                     # Username with ID (Username#1234)
     username = str(member).split('#')[0]        # Username without ID (Username)
