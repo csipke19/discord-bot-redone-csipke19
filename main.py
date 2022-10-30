@@ -1,5 +1,6 @@
 import discord
 import csv
+from mss import mss
 
 intents = discord.Intents.default()
 #intents = discord.Intents.all()
