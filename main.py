@@ -1,10 +1,10 @@
 import discord
 import csv
 
-#intents = discord.Intents.default()
-intents = discord.Intents.all()
+intents = discord.Intents.default()
+#intents = discord.Intents.all()
 intents.members = True
-#intents.message_content = True
+intents.message_content = True
 client = discord.Client(intents=intents)
 guild = 0
 app_info = None
