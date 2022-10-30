@@ -1,5 +1,6 @@
 import discord
 import csv
+import utils
 
 intents = discord.Intents.default()
 #intents = discord.Intents.all()
@@ -52,6 +53,9 @@ async def on_message(message):
         return
     if user_message.lower() == "szia bot":
         await message.channel.send("szia")
+    if user_message.lower() == "screenshot":
+        utils.create_screenshot()
+        await message.channel.send("képernyőkép elkészítve")
 
 
 def get_token():
