@@ -53,9 +53,13 @@ async def on_message(message):
         return
     if user_message.lower() == "szia bot":
         await message.channel.send("szia")
-    if user_message.lower() == "screenshot":
+    elif user_message.lower() == "screenshot":
         utils.create_screenshot()
         await message.channel.send("képernyőkép elkészítve")
+    elif user_message.lower() == "screenshot send":
+        picture_name = utils.create_screenshot(True)
+        await message.channel.send("képernyőkép küldése..")
+        await message.channel.send(file=discord.File("screenshots/"+picture_name))
 
 
 def get_token():
