@@ -48,8 +48,9 @@ async def on_message(message):
     member = message.author                     # Username with ID (Username#1234)
     username = str(member).split('#')[0]        # Username without ID (Username)
     user_message = str(message.content)
-    channel = str(message.channel.name)
-    print(f'{username}: {user_message} ({channel})')
+    if message.guild:
+        channel = str(message.channel.name)
+        print(f'{username}: {user_message} ({channel})')
 
     if message.author == client.user:
         return
