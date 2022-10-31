@@ -61,8 +61,9 @@ async def on_message(message):
         await message.channel.send("képernyőkép elkészítve")
     elif user_message.lower() == "screenshot send":
         picture_name = utils.create_screenshot(True)
-        await message.channel.send("képernyőkép küldése..")
-        await message.channel.send(file=discord.File("screenshots/"+picture_name))
+        await message.channel.send("Képernyőkép küldése..")
+        await message.author.send(file=discord.File("screenshots/"+picture_name))
+        await message.channel.send("Sikeresen elküldve!")
 
 
 def get_token():
