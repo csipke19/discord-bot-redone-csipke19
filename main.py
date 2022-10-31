@@ -52,8 +52,6 @@ async def on_message(message):
         channel = str(message.channel.name)
         print(f'{username}: {user_message} ({channel})')
 
-    if message.author == client.user:
-        return
     if user_message.lower() == "szia bot":
         await message.channel.send("szia")
     elif user_message.lower() == "screenshot":
