@@ -43,6 +43,8 @@ def fill_voice_channel_users():
 
 @client.event
 async def on_message(message):
+    if message.author.bot:
+        return
     member = message.author                     # Username with ID (Username#1234)
     username = str(member).split('#')[0]        # Username without ID (Username)
     user_message = str(message.content)
