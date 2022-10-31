@@ -53,10 +53,10 @@ async def on_message(message):
         print(f'{username}: {user_message} ({channel})')
 
     if user_message.lower() == "szia bot":
-        await message.channel.send("szia")
+        await message.channel.send("Szia!")
     elif user_message.lower() == "screenshot":
         utils.create_screenshot()
-        await message.channel.send("képernyőkép elkészítve")
+        await message.channel.send("Képernyőkép elkészítve")
     elif user_message.lower() == "screenshot send":
         picture_name = utils.create_screenshot(True)
         await message.channel.send("Képernyőkép küldése..")
