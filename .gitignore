@@ -130,3 +130,4 @@ dmypy.json
 
 /csv_files/code.csv
 .idea/
+screenshots/*
