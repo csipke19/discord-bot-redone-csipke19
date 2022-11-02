@@ -42,6 +42,23 @@ def fill_voice_channel_users():
 
 
 @client.event
+async def on_voice_state_update(member, before, after):
+    global users_in_channel
+    global voice_channel_users
+    only_username = str(member)[:len(str(member)) - 5]
+    try:
+        users_in_channel[only_username] = after.channel.name
+    except:
+        users_in_channel.pop(only_username)
+    try:
+        if voice_channel_users[before.channel.name]:
+            voice_channel_users[before.channel.name].remove(member)
+    except:
+        pass
+    if after.channel:
+        voice_channel_users[after.channel.name].append(member)
+
+@client.event
 async def on_message(message):
     if message.author.bot or str(message.content)[0] != "!":
         return
