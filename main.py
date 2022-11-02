@@ -43,25 +43,10 @@ def fill_voice_channel_users():
 
 @client.event
 async def on_message(message):
-    if message.author.bot:
+    if message.author.bot or str(message.content)[0] != "!":
         return
-    member = message.author                     # Username with ID (Username#1234)
-    username = str(member).split('#')[0]        # Username without ID (Username)
-    user_message = str(message.content)
-    if message.guild:
-        channel = str(message.channel.name)
-        print(f'{username}: {user_message} ({channel})')
-
-    if user_message.lower() == "szia bot":
-        await message.channel.send("Szia!")
-    elif user_message.lower() == "screenshot":
-        utils.create_screenshot()
-        await message.channel.send("Képernyőkép elkészítve")
-    elif user_message.lower() == "screenshot send":
-        picture_name = utils.create_screenshot(True)
-        await message.channel.send("Képernyőkép küldése..")
-        await message.author.send(file=discord.File("screenshots/"+picture_name))
-        await message.channel.send("Sikeresen elküldve!")
+    else:
+        await commands.bot_commands(message)
 
 
 def get_token():
