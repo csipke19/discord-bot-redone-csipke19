@@ -15,6 +15,7 @@ is_sent = True
 async def commands(msg, cmd=""):
     global current_command
     current_command = cmd[0]
+    send = msg.channel.send
     if len(cmd) > 1:
         parameter = cmd[1]
     if len(cmd) > 3:
