@@ -58,9 +58,10 @@ async def on_voice_state_update(member, before, after):
     if after.channel:
         voice_channel_users[after.channel.name].append(member)
 
+
 @client.event
 async def on_message(message):
-    if message.author.bot or str(message.content)[0] != "!":
+    if message.author.bot or str(message.content.strip())[0] != "!":
         return
     else:
         await commands.bot_commands(message)
