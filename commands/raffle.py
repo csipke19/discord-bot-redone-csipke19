@@ -105,7 +105,16 @@ async def commands(msg, cmd=""):
             await send("You have no permission for this in the current raffle!")
 
     async def raffle_terminate():
-        pass
+        global is_sent, item, participants, is_open, owner
+        if owner is None:
+            await send("There is no raffle to terminate or something went wrong!")
+        elif msg.author.name == owner or msg.author.roles:
+            participants = []
+            is_open = False
+            owner = None
+            item = ""
+            is_sent = True
+            await send("Current raffle has ended!")
 
     screenshot_cmd_calls = {
         "open": [raffle_open, "open a raffle with the give item (e.g.: cd-key) (Usage: !raffle open <item_for_raffle>)"],
