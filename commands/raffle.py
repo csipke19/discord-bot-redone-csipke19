@@ -97,7 +97,12 @@ async def commands(msg, cmd=""):
             await send(f"Current participants: {', '.join(names)}")
 
     async def raffle_send_item():
-        pass
+        if owner is None:
+            await send("There is no owner for the raffle or no raffle at all!")
+        if msg.author.name == owner.name:
+            await msg.author.send(f"The current item is: {item}")
+        else:
+            await send("You have no permission for this in the current raffle!")
 
     async def raffle_terminate():
         pass
