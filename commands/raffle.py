@@ -87,7 +87,14 @@ async def commands(msg, cmd=""):
             await send(f"The current raffle owner is: {owner.name}")
 
     async def raffle_participants():
-        pass
+        if owner is None:
+            await send("There is no active raffle currently!")
+            return
+        if not participants:
+            await send("There are no participants currently or there is no ongoing raffle!")
+        else:
+            names = [x.name for x in participants]
+            await send(f"Current participants: {', '.join(names)}")
 
     async def raffle_send_item():
         pass
