@@ -36,7 +36,16 @@ async def commands(msg, cmd=""):
             await send("A raffle is currently going on, please shut down the current one first!")
 
     async def raffle_close():
-        pass
+        global is_open
+        if owner is None:
+            await send("There is no active raffle currently!")
+            return
+        if not is_sent:
+            if is_open:
+                is_open = False
+                await send("The raffle has been closed!")
+            else:
+                await send("The raffle is currently closed!")
 
     async def raffle_join():
         if msg.author not in participant_ids:
