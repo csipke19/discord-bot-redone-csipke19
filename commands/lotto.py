@@ -15,8 +15,10 @@ async def commands(msg, cmd=""):
 
     async def generate_numbers(max_number):
         numbers = []
-        while len(numbers) != max_number:
-            number = str(random.randint(1, 91))
+        min_number = 1
+        max_number = 90 if number_of_numbers == 5 else 45 if number_of_numbers == 6 else 35
+        while len(numbers) != number_of_numbers:
+            number = str(random.randint(min_number, max_number))
             if number not in numbers:
                 numbers.append(number)
         return numbers
