@@ -1,6 +1,9 @@
+import re
+
 import commands.screenshot as screenshot
 import commands.lotto as lotto
 import commands.raffle as raffle
+import commands.overwatch.ow as overwatch
 
 
 async def bot_commands(message):
