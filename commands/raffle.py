@@ -5,7 +5,7 @@ import utils
 
 current_command = ""
 reaction_emoji = '✅'
-participant_ids = []
+participants = []
 is_open = False
 owner = None
 item = ""
