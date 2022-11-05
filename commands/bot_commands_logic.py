@@ -14,12 +14,15 @@ async def bot_commands(message):
     if message.guild:
         channel = str(message.channel.name)
         print(f'{username}: {user_message} ({channel})')
-    if command_call in command_calls:
+    else:
         print(f'{username}: {user_message}')
+    if command_call in command_calls:
         if command_call == "!help":
             await command_calls[command_call][0](message)
         else:
-            await command_calls[command_call][0](message, user_message.split(" "))
+            await command_calls[command_call][0](message, re.split(r'\s+', user_message))
+    else:
+        return
 
 
 async def help_command(msg):
