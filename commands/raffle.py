@@ -23,7 +23,8 @@ async def commands(msg, cmd=""):
         return
 
     async def raffle_open():
-        global is_sent, item, participant_ids, is_open, owner
+        global is_sent, item, participants, is_open, owner
+        await msg.delete()
         if is_sent and not is_open:
             is_sent = False
             is_open = True
