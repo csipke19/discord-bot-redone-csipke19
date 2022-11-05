@@ -130,8 +130,8 @@ async def commands(msg, cmd=""):
     }
 
     if len(cmd) == 1:
-        await utils.list_command_details(msg.channel.send, screenshot_cmd_calls, current_command)
-    elif cmd[1] in screenshot_cmd_calls:
-        await screenshot_cmd_calls[cmd[1]][0]()
+        await utils.list_command_details(send, screenshot_cmd_calls, current_command)
+    elif parameter in screenshot_cmd_calls:
+        await screenshot_cmd_calls[parameter][0]()
     else:
-        await utils.invalid_parameters(msg.channel.send, current_command)
+        await utils.invalid_parameters(send, current_command)
