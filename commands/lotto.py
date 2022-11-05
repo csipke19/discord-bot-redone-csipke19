@@ -13,7 +13,7 @@ async def commands(msg, cmd=""):
         numbers = await generate_numbers(num)
         await msg.channel.send("The lotto numbers are the following:\n"+", ".join(numbers))
 
-    async def generate_numbers(max_number):
+    async def generate_numbers(number_of_numbers):
         numbers = []
         min_number = 1
         max_number = 90 if number_of_numbers == 5 else 45 if number_of_numbers == 6 else 35
