@@ -17,4 +17,4 @@ async def list_command_details(msg, parameters, command):
 
 
 async def invalid_parameters(msg,command):
-    await msg.channel.send(f"Invalid parameters, write in '{command}' for more details!")
+    await msg(f"Invalid parameters, write in '{command}' for more details!")
