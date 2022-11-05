@@ -33,7 +33,7 @@ async def commands(msg, cmd=""):
             owner = msg.author
             await send(f"A raffle is opened by: {owner.name}! Join the raffle with: '!raffle join' !")
         else:
-            await msg.channel.send("A raffle is currently going on, please shut down the current one first!")
+            await send("A raffle is currently going on, please shut down the current one first!")
 
     async def raffle_close():
         pass
