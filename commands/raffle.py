@@ -2,8 +2,6 @@ import random
 import time
 
 import utils
-import discord
-from discord.utils import get
 
 current_command = ""
 reaction_emoji = '✅'
