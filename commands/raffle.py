@@ -29,9 +29,9 @@ async def commands(msg, cmd=""):
             is_sent = False
             is_open = True
             item = cmd[2]
-            participant_ids = []
-            owner = str(msg.author).split('#')[0]
-            await msg.channel.send(f"A raffle is opened by: {owner}! Join the raffle with: '!raffle join' !")
+            participants = []
+            owner = msg.author
+            await send(f"A raffle is opened by: {owner.name}! Join the raffle with: '!raffle join' !")
         else:
             await msg.channel.send("A raffle is currently going on, please shut down the current one first!")
 
