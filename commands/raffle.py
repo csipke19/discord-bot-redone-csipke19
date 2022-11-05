@@ -19,7 +19,7 @@ async def commands(msg, cmd=""):
     if len(cmd) > 1:
         parameter = cmd[1]
     if len(cmd) > 3:
-        await msg.channel.send(f"Invalid command parameter number, please use {current_command} for more details!")
+        await send(f"Invalid command parameter number, please use {current_command} for more details!")
         return
 
     async def raffle_open():
