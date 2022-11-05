@@ -57,10 +57,19 @@ async def commands(msg, cmd=""):
         await msg.add_reaction(reaction_emoji)
 
     async def raffle_start():
-        await msg.channel.send("and the winner is...")
-        time.sleep(4)
-        await msg.channel.send(f".. {random.choice(participant_ids)}! Your item is sent through DM, congratulations!")
-        get(discord.Member,)
+        if owner is None:
+            await send("There is no active raffle currently!")
+            return
+        if msg.author.name == owner.name:
+            if not is_open:
+                winner = random.choice(participants)
+                await send("and the winner is...")
+                time.sleep(3)
+                await send(f".. {winner.name}! Your item is sent through DM, congratulations!")
+                await winner.send(f"You have won the following item:\n{item}")
+                await raffle_terminate()
+            else:
+                await msg.author.send("The raffle is currently open, please close it first!")
 
     async def raffle_status():
         pass
