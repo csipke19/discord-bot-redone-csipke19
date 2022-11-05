@@ -34,5 +34,6 @@ command_calls = {
     "!help": [help_command, "list out all the bot commands"],
     "!screenshot": [screenshot.commands, "take screenshot from the monitor of the bot running server"],
     "!lotto": [lotto.commands, "generate lotto numbers"],
-    "!raffle": [raffle.commands, "manage a raffle (start, join, stop.. etc.)"]
+    "!raffle": [raffle.commands, "manage a raffle (start, join, stop.. etc.)"],
+    "!ow": [overwatch.commands, "overwatch commands like random role and hero pick"]
 }
