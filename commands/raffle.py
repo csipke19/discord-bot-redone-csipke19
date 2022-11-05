@@ -48,11 +48,13 @@ async def commands(msg, cmd=""):
                 await send("The raffle is currently closed!")
 
     async def raffle_join():
-        if msg.author not in participant_ids:
-            participant_ids.append(msg.author)
-            await msg.add_reaction(reaction_emoji)
-        else:
-            await msg.reply(f"You already joined this raffle {str(msg.author).split('#')[0]}!")
+        for member in participants:
+            if msg.author.name == member.name:
+                await send(f"You already joined this raffle {str(msg.author).split('#')[0]}!")
+                await msg.delete()
+                return
+        participants.append(msg.author)
+        await msg.add_reaction(reaction_emoji)
 
     async def raffle_start():
         await msg.channel.send("and the winner is...")
