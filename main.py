@@ -1,6 +1,6 @@
 import discord
 import csv
-import bot_commands_logic as commands
+from commands import bot_commands_logic as commands
 
 intents = discord.Intents.default()
 #intents = discord.Intents.all()
