@@ -1,6 +1,6 @@
 # All around Discord bot🤖
 
-This is a bot made for our personal needs on our discord server, but if you are interested in you can use this as a bot logic for your own<br>
+This is a bot made for our personal needs on our discord server, but if you are interested, you can use this as a bot logic for your own<br>
 Unfortunately **we can't provide you our own bot, but here is a short guide how you can make your own bot for this purpose!**
 
 ## Setup your own bot 🔧
@@ -41,7 +41,7 @@ To resolve this problem, you need to do a directory with the name: "csv_files" i
 ![image](https://user-images.githubusercontent.com/90270578/200694389-6c80f61c-fc46-4618-a226-5ea0a9c338fb.png)<br><br>
 ..and in this directory, do a file, with the name: "code.csv"<br>
 ![image](https://user-images.githubusercontent.com/90270578/200695080-1e589745-4d70-4fb3-8319-31b0c3c28baa.png)<br>
-Just paste your token in this file, save it and you are done!<br>
+Just paste your token in this file, save it and you are done!<br><br>
 After this, if you run the "run.bat" file in the main folder you get the following look!<br>
 ![image](https://user-images.githubusercontent.com/90270578/200695432-70cc4033-dbc3-4689-9389-c279889798e3.png)<br><br>
 
