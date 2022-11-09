@@ -3,9 +3,13 @@
 This is a bot made for our personal needs on our discord server, but if you are interested, you can use this as a bot logic for your own<br>
 Unfortunately **we can't provide you our own bot, but here is a short guide how you can make your own bot for this purpose!**
 
-## Setup your own bot 🔧
+## Setup your own bot steps🔧
+1. [Create a bot](#create-a-bot)
+2. [Invite your bot to your server](#invite-your-bot-to-your-server)
+3. [Integrate your bot](#integrate-your-bot)<br>
+[FAQ](#faq)
 
-## 1. Create a bot
+## Create a bot
 First, [click here](https://discord.com/developers/docs/intro) to get to the **Discord Developer Portal**<br>
 In here, you need to click the applications button on the left hand corner<br>
 ![image](https://user-images.githubusercontent.com/90270578/200140829-605d5abc-420f-47d3-aa51-8d2466321366.png)<br><br>
@@ -19,7 +23,7 @@ Here, create your own bot, give it a name and make the following settings (not e
 If you are DONE, copy the discord **Bot token code** on this page (later you need this), your token code is the long letter-number combination near the top. If you not see it by default, Click the `Reset Token` Button<br>
 ![image](https://user-images.githubusercontent.com/90270578/200141703-c4dff982-4b0d-4fe8-9601-df0e607c865d.png)<br><br>
 
-## 2. Invite your bot to your server
+## Invite your bot to your server
 In the next step, you need to get your client id, and paste it in the following link:<br>
 
 >discord.com/api/oauth2/authorize?client_id=`|Your client ID|`&permissions=0&scope=bot%20applications.commands<br>
@@ -32,7 +36,7 @@ Here, choose the server you want the bot to connect to and click the `Authorize`
 If everything was right, you get the following comfirmation page:<br>
 ![image](https://user-images.githubusercontent.com/90270578/200170503-a01c19b5-c92c-45c8-9b85-a0e53547dcdf.png)<br><br>
 
-## 3. Integrate your bot 
+## Integrate your bot 
 If you cloned this git repository, you need to create a csv file to use your bot with the **previously cloned token**<br><br>
 >The error messeage if the file is missing<br>
 ![image](https://user-images.githubusercontent.com/90270578/200693022-4d4edd06-f1b2-462d-b852-9900c820b136.png)<br><br>
