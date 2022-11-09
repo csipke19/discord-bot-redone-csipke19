@@ -46,6 +46,12 @@ To resolve this problem, you need to do a directory with the name: "csv_files" i
 ..and in this directory, do a file, with the name: "code.csv"<br>
 ![image](https://user-images.githubusercontent.com/90270578/200695080-1e589745-4d70-4fb3-8319-31b0c3c28baa.png)<br>
 Just paste your token in this file, save it and you are done!<br><br>
+After this, you need to write in the Server ID to the "settings.cfg"<br>
+To get your server ID, right click on your server on Discord, and press the `Copy ID` button on the bottom<br>
+![image](https://user-images.githubusercontent.com/90270578/200828753-c1e6fdef-a2fd-4aaa-ae76-5ab4ccf0e189.png)<br><br>
+..and copy it in to the settings.cfg, after the "server_id=" row like the following:<br>
+![image](https://user-images.githubusercontent.com/90270578/200829323-8ab1c62a-e8d3-4e33-b3a9-a81b19fb1ca8.png)<br><br>
+
 After this, if you run the "run.bat" file in the main folder you get the following look!<br>
 ![image](https://user-images.githubusercontent.com/90270578/200695432-70cc4033-dbc3-4689-9389-c279889798e3.png)<br><br>
 
@@ -67,3 +73,6 @@ WINDOWS:
 | venv\Scripts\activate | to enter the virtual environment
 | pip install -r requirements.txt | to install the requirements in the current environment
 ```
+
+### I got this error: AttributeError: 'NoneType' object has no attribute 'voice_channels'. Why?
+You get this error if you forgot to put in your server id in the "settings.cfg" file or the code you use is invalid, because the bot is not on the server or you missed out 1 or more number from the id. Step by step [in the following point](#integrate-your-bot)
