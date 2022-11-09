@@ -34,7 +34,7 @@ async def on_ready():
 
 def fill_voice_channel_users():
     global guild
-    guild = client.get_guild(274905260718292992)
+    guild = client.get_guild(server_id)
     voice_channels = guild.voice_channels
     for voice_channel in voice_channels:
         voice_channel_users[voice_channel.name] = voice_channel.members
