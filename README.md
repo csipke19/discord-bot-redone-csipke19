@@ -1,7 +1,8 @@
 # All around Discord bot🤖
 
 This is a bot made for our personal needs on our discord server, but if you are interested, you can use this as a bot logic for your own<br>
-Unfortunately **we can't provide you our own bot, but here is a short guide how you can make your own bot for this purpose!**
+Unfortunately **we can't provide you our own bot, but here is a short guide how you can make your own bot for this purpose!**<br>
+If you want to test the bot out, here is an invitation link to the test server: [link](https://discord.gg/x3edBH3cSJ)
 
 ## Setup your own bot steps🔧
 1. [Create a bot](#create-a-bot)
