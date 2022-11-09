@@ -1,6 +1,7 @@
 import discord
 import csv
 from commands import bot_commands_logic as commands
+from moderations import bot_moderations_logic as moderations
 
 intents = discord.Intents.default()
 #intents = discord.Intents.all()
@@ -13,6 +14,8 @@ bot_owner_user = None
 bot_owner_name = ""
 users_in_channel = dict()       # Key: String - Value: String
 voice_channel_users = dict()    # Key: String - Value: MemberClass
+is_automoderate = True
+server_id = None
 
 
 @client.event
@@ -74,4 +77,31 @@ def get_token():
         return data[0][0]
 
 
+def set_server_id(id_value):
+    global server_id
+    server_id = int(id_value)
+
+
+def set_automoderate(boolean_value):
+    global is_automoderate
+    is_automoderate = True if boolean_value == "True" else False
+
+
+config_file_parameters = {
+    "server_id": set_server_id,
+    "automoderate": set_automoderate
+}
+
+
+def load_cfg():
+    with open('settings.cfg', newline='') as f:
+        for parameter in f:
+            line = parameter.strip().split("=")
+            key = line[0].strip()
+            value = line[1].strip()
+            if key in config_file_parameters:
+                config_file_parameters[key](value)
+
+
+load_cfg()
 client.run(get_token())
