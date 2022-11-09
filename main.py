@@ -64,8 +64,10 @@ async def on_voice_state_update(member, before, after):
 
 @client.event
 async def on_message(message):
-    if message.author.bot or str(message.content.strip())[0] != "!":
+    if message.author.bot:
         return
+    elif str(message.content.strip())[0] != "!" and is_automoderate:
+        await moderations.bot_moderation(message)
     else:
         await commands.bot_commands(message)
 
