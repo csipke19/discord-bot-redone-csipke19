@@ -64,6 +64,6 @@ LINUX:
 WINDOWS:
 | pip install virtualenv | (if you don't already have virtualenv installed)
 | python -m venv venv | to create your new environment (called 'venv' here)
-| source venv/Scripts/activate | to enter the virtual environment
+| venv\Scripts\activate | to enter the virtual environment
 | pip install -r requirements.txt | to install the requirements in the current environment
 ```
